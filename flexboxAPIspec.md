@@ -104,6 +104,17 @@ _(This is conceptual documentation that will go to docs.microsoft.com "how to" p
     adjust it when copying to DMC.
 -->
 
+WinUI Offers several Layout options, such as StackLayout and Flowlayout. Usage of Flexbox Layout will behave similarly and interact by wrapping your desired elements in a Layout Control.
+
+
+## Remarks
+
+#### Traditional CSS Behavior vs Flexbox in WinUI
+
+Several behaviors may deviate from the exact behavior found in CSS Flexbox, to highlight one in XAML, items do not overflow their containers, rather they simply will be omitted from the layout.
+
+
+
 # API Pages
 
 _(Each of the following L2 sections correspond to a page that will be on docs.microsoft.com)_
@@ -666,7 +677,7 @@ Note: The align-self property overrides the flexible container's align-items pro
 ### Output of the above code (styling omitted)
 ![image](./FlexAlignSelf.PNG)
 
-##  Flex AlignItems Accepted Values
+##  Flex AlignSelf Accepted Values
 
 | Value | Description |
 |-|-|
@@ -692,6 +703,55 @@ runtimeclass FlexboxLayout;
         }
 ```
 
+
+## Flexbox Unit
+
+The flex-unit property will define the unit of measurement to be used by the flex-basis property.
+
+
+```xml
+        <controls:LayoutPanel MinWidth="500">
+            <controls:LayoutPanel.Layout>
+                <controls:FlexboxLayout/>
+            </controls:LayoutPanel.Layout>
+            <Grid controls:FlexboxLayout.Basis="50" Unit="px">
+                <TextBlock>50</TextBlock>
+            </Grid>
+            <Grid controls:FlexboxLayout.Basis="100" Unit="px">
+                <TextBlock>100</TextBlock>
+            </Grid>
+            <Grid controls:FlexboxLayout.Basis="150" Unit="px">
+                <TextBlock>150</TextBlock>
+            </Grid>
+        </controls:LayoutPanel>
+```
+
+### Output of the above code (styling omitted)
+![image](./FlexBasis.PNG)
+
+
+##  Flex AlignSelf Accepted Values
+
+| Value | Description |
+|-|-|
+| px (Default) |The unit of measurment input into the flex-basis property will be calculated in pixels |
+| % | The element's size will be calculated as a relative percentage of its container|
+
+
+
+# API Details
+
+```c# (but really MIDL3)
+
+runtimeclass FlexboxLayout;
+
+    enum FlexboxUnit
+        {
+            px = 0,
+            % = 1,
+
+        }
+```
 
 # Appendix
 
