@@ -104,12 +104,30 @@ More on Flexbox available here: https://css-tricks.com/snippets/css/a-guide-to-f
 
 WinUI Offers several Layout options, such as StackLayout and Flowlayout. Usage of Flexbox Layout will behave similarly and interact by wrapping your desired elements in a Layout Control.
 
+#### Flex Containers vs Flex Items
 
+Flex Containers are elements that hold and specify the arangement of Flex Items. Containers have the following accepted properties:
+| Property | 
+|-|
+| Direction |
+Wrap|
+JustifyContent|
+AlignItems|
+AlignContent|
 
+Flex Items are elements that are children of a Flex Container. Items have the following accepted properties:
+| Property | 
+|-|
+order|
+Grow|
+Shrink|
+Basis|
+AlignSelf|
+Unit|
 
 #### Traditional CSS Behavior vs Flexbox in WinUI
 
-Several behaviors may deviate from the exact behavior found in CSS Flexbox, to highlight one in XAML, items do not overflow their containers, rather they simply will be omitted from the layout.
+Several behaviors may deviate from the exact behavior found in CSS Flexbox, to highlight one in XAML, items do not overflow their containers, instead they will be omitted from the layout.
 
 
 
