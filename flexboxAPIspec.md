@@ -82,9 +82,7 @@ Flexbox is a widely used layout schematic in web development, it allows develope
 More on Flexbox available here: https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flexbox-properties
 
 
-# Conceptual pages (How To)
-
-_(This is conceptual documentation that will go to docs.microsoft.com "how to" page)_
+# Remarks
 
 <!-- TEMPLATE
     (Optional)
@@ -107,7 +105,7 @@ _(This is conceptual documentation that will go to docs.microsoft.com "how to" p
 WinUI Offers several Layout options, such as StackLayout and Flowlayout. Usage of Flexbox Layout will behave similarly and interact by wrapping your desired elements in a Layout Control.
 
 
-## Remarks
+
 
 #### Traditional CSS Behavior vs Flexbox in WinUI
 
