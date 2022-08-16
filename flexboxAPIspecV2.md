@@ -1,13 +1,7 @@
-
-
-
 Flexbox Layout for WinUI 
 ===
 
 # Background
-
-
-
 
 Flexbox Layout is designed to provide an efficient way to layout, align, and distribute space among items within a container, specifically when the size of the device is either unknown or dynamic.
 
@@ -15,14 +9,10 @@ Flexbox is a widely used layout schematic in web development, it allows develope
 
 More on Flexbox available here: https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flexbox-properties
 
-
-# Remarks
-
-
-
 WinUI Offers several Layout options, such as StackLayout and Flowlayout. Usage of Flexbox Layout will behave similarly and interact by wrapping your desired elements in a Layout Control.
 
-#### Flex Containers vs Flex Items
+#### Flex Containers and Flex Items
+
 
 Flex Containers are elements that hold and specify the arangement of Flex Items. Containers have the following accepted properties:
 | Property | 
@@ -43,25 +33,22 @@ Basis|
 AlignSelf|
 Unit|
 
-
-
 #### Traditional CSS Behavior vs Flexbox in WinUI
 
 Several behaviors may deviate from the exact behavior found in CSS Flexbox, to highlight one in XAML, items do not overflow their containers, instead they will be omitted from the layout.
-
-
 
 # API Pages
 
 _(Each of the following L2 sections correspond to a page that will be on docs.microsoft.com)_
 
 
-
 ## Flex Direction
 
+The Direction property specifies the direction of the flex items.
 
-The flex-direction property specifies the direction of the flexible items.
-Note: If the element is not a flexible item, the flex-direction property has no effect.
+
+CSS flex-direction property (w3schools.com)
+https://www.w3schools.com/cssref/css3_pr_flex-direction.asp
 
 
 ```xml
@@ -95,9 +82,9 @@ Note: If the element is not a flexible item, the flex-direction property has no 
 
 | Value | Description |
 |-|-|
-| Row (Default) | The flexible items are displayed horizontally, as a row |
+| Row (Default) | The flex items are displayed horizontally, as a row |
 | RowReverse | Same behavior as Row, but elemnts are shown in reverse |
-| Column | The flexible items are displayed vertically, as a column |
+| Column | The flex items are displayed vertically, as a column |
 | ColumnReverse | Same behavior as Column, but elemnts are shown in reverse |
 
 # API Details
@@ -117,9 +104,8 @@ runtimeclass FlexboxLayout;
 
 ## Flex Wrap
 
-The flex-wrap property specifies whether the flexible items should wrap or not.
+The Wrap property specifies whether the flex items should wrap or not.
 
-Note: If the elements are not flexible items, the flex-wrap property has no effect.
 
 ```xml
 
@@ -151,7 +137,7 @@ Note: If the elements are not flexible items, the flex-wrap property has no effe
             <Grid MinWidth="100">
                 <TextBlock>8</TextBlock>
             </Grid>
-        </controls:LayoutPanel>
+</controls:LayoutPanel>
 ```
 ### Output of the above code (styling omitted)
 ![image](./FlexWrap.PNG)
@@ -162,9 +148,9 @@ Note: If the elements are not flexible items, the flex-wrap property has no effe
 
 | Value | Description |
 |-|-|
-| NoWrap (Default) | Default value. Specifies that the flexible items will not wrap |
-| Wrap | Specifies that the flexible items will wrap if necessary	|
-| WrapReverse | Specifies that the flexible items will wrap, if necessary, in reverse orde |
+| NoWrap (Default) | Default value. Specifies that the flex items will not wrap |
+| Wrap | Specifies that the flex items will wrap if necessary	|
+| WrapReverse | Specifies that the flex items will wrap, if necessary, in reverse orde |
 
 
 # API Details
@@ -184,7 +170,7 @@ runtimeclass FlexboxLayout;
 
 ## Flex JustifyContent
 
-The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally).
+The JustifyContent property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally).
 
 ```xml
 
@@ -233,7 +219,7 @@ runtimeclass FlexboxLayout;
 
 ## Flex AlignItems
 
-The align-items property specifies the default alignment for items inside the flexible container.
+The AlignItems property specifies the default alignment for items inside the flexible container.
 
 ```xml
 
@@ -277,11 +263,9 @@ runtimeclass FlexboxLayout;
 
 
 
-
-
 ## Flex AlignContent
 
-The align-content property modifies the behavior of the flex-wrap property. It is similar to align-items, but instead of aligning flex items, it aligns flex lines.
+The AlignContent property modifies the behavior of the Wrap property. It is similar to AlignItems, but instead of aligning flex items, it aligns flex lines.
 
 Note: There must be multiple lines of items for this property to have any effect.
 
@@ -341,9 +325,8 @@ runtimeclass FlexboxLayout;
 
 ## Flex Order
 
-The order property specifies the order of a flexible item relative to the rest of the flexible items inside the same container.
+The Order property specifies the Order of a flex item relative to the rest of the flex items inside the same container.
 
-Note: If the element is not a flexible item, the order property has no effect.
 
 
 ```xml
@@ -376,7 +359,7 @@ Note: If the element is not a flexible item, the order property has no effect.
 
 | Value | Description |
 |-|-|
-| Number (Default Value = 0) | Specifies the order for the flexible item |
+| Number (Default Value = 0) | Specifies the order for the flex item |
 
 # API Details
 
@@ -396,9 +379,8 @@ unsealed runtimeclass FlexboxLayout : NonVirtualizingLayout
 
 ## Flex Grow
 
-The flex-grow property specifies how much the item will grow relative to the rest of the flexible items inside the same container.
+The Grow property specifies how much the item will grow relative to the rest of the flex items inside the same container.
 
-Note: If the element is not a flexible item, the flex-grow property has no effect.
 
 
 ```xml
@@ -428,7 +410,7 @@ Note: If the element is not a flexible item, the flex-grow property has no effec
 
 | Value | Description |
 |-|-|
-| Number (Default Value = 0) | Specifies how much the item will grow relative to the rest of the flexible items. |
+| Number (Default Value = 0) | Specifies how much the item will grow relative to the rest of the flex items. |
 
 # API Details
 
@@ -450,9 +432,8 @@ unsealed runtimeclass FlexboxLayout : NonVirtualizingLayout
 
 ## Flex Shrink
 
-The flex-shrink property specifies how the item will shrink relative to the rest of the flexible items inside the same container.
+The Shrink property specifies how the item will shrink relative to the rest of the flex items inside the same container.
 
-Note: If the element is not a flexible item, the flex-shrink property has no effect.
 
 
 ```xml
@@ -483,7 +464,7 @@ todo
 
 | Value | Description |
 |-|-|
-| Number (Default Value = 1) | Specifies how much the item will shrink relative to the rest of the flexible items. |
+| Number (Default Value = 1) | Specifies how much the item will shrink relative to the rest of the flex items. |
 
 # API Details
 
@@ -505,9 +486,8 @@ unsealed runtimeclass FlexboxLayout : NonVirtualizingLayout
 
 ## Flex Basis
 
-The flex-basis property specifies the initial length of a flexible item.
+The Basis property specifies the initial length of a flex item.
 
-Note: If the element is not a flexible item, the flex-basis property has no effect.
 
 
 ```xml
@@ -537,7 +517,7 @@ Note: If the element is not a flexible item, the flex-basis property has no effe
 
 | Value | Description |
 |-|-|
-| Number | A number, specifying the initial length of the flexible item |
+| Number | A number, specifying the initial length of the flex item |
 
 # API Details
 
@@ -558,9 +538,7 @@ unsealed runtimeclass FlexboxLayout : NonVirtualizingLayout
 
 ## Flex AlignSelf
 
-The align-self property specifies the alignment for the selected item inside the flexible container.
-
-Note: The align-self property overrides the flexible container's align-items property.
+The AlignSelf property specifies the alignment for the selected item inside the flexible container.
 
 ```xml
 <controls:LayoutPanel VerticalAlignment="Stretch" MinHeight="100">
@@ -584,7 +562,7 @@ Note: The align-self property overrides the flexible container's align-items pro
 
 | Value | Description |
 |-|-|
-| Auto (Default) |The element inherits its parent container's align-items property, or "stretch" if it has no parent container	|
+| Auto (Default) |The element inherits its parent container's AlignItems property, or "stretch" if it has no parent container	|
 | Start | 	The element is positioned at the beginning of the container|
 | End | The element is positioned at the end of the container	|
 | Center | The element is positioned at the center of the container	|
@@ -609,7 +587,7 @@ runtimeclass FlexboxLayout;
 
 ## Flexbox Unit
 
-The flex-unit property will define the unit of measurement to be used by the flex-basis property.
+The Unit property will define the unit of measurement to be used by the Basis property.
 
 
 ```xml
@@ -637,7 +615,7 @@ The flex-unit property will define the unit of measurement to be used by the fle
 
 | Value | Description |
 |-|-|
-| pixels (Default) |The unit of measurment input into the flex-basis property will be calculated in pixels |
+| pixels (Default) |The unit of measurment input into the Basis property will be calculated in pixels |
 | percent | The element's size will be calculated as a relative percentage of its container|
 
 
