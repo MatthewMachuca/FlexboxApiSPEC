@@ -14,7 +14,22 @@ WinUI Offers several Layout options, such as StackLayout and Flowlayout. Usage o
 #### Flex Containers and Flex Items
 
 
-Flex Containers are elements that hold and specify the arangement of Flex Items. Containers have the following accepted properties:
+Flex Containers are elements that hold and specify the arangement of Flex Items. 
+
+```xml
+        <controls:LayoutPanel>
+            <controls:LayoutPanel.Layout>
+                <controls:FlexboxLayout JustifyContent="End"/>
+            </controls:LayoutPanel.Layout>
+            <Grid MinWidth="120"/>
+            <Grid MinWidth="60"/>
+            <Grid MinWidth="120"/>
+        </controls:LayoutPanel>
+```
+Above, the Layout Panel control serves as our "flex container" and its children, the 3 Grid controls, are the "flex items" .
+
+
+Containers have the following accepted properties:
 | Property | 
 |-|
 | Direction |
@@ -432,8 +447,7 @@ unsealed runtimeclass FlexboxLayout : NonVirtualizingLayout
 
 ## Flex Shrink
 
-The Shrink property specifies how the item will shrink relative to the rest of the flex items inside the same container.
-
+The Shrink property specifies how the item will become smaller in size relative to the rest of the flex items inside the same container.
 
 
 ```xml
